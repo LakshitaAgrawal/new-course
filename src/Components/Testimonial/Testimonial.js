@@ -76,7 +76,7 @@ const Testimonial = () => {
         {/* right */}
         <div className="relative ">
           <div className="relative w-[726px]">
-            <img src={testimonials[currentIndex].image} className="w-[560px] h-[700px] object-contain" />
+            <img src={testimonials[currentIndex].image} className="w-[560px] h-[700px] object-fit rounded-3xl" />
             <div className="absolute flex flex-row gap-10 justify-center rounded-xl shadow-2xl w-[660px] h-[300px] bg-[#ffffff] right-0 top-[72%]">
               {testimonials.map((testimonial, index) => (
                 <div
@@ -106,10 +106,23 @@ const Testimonial = () => {
                         {testimonial.author}
                       </p>
                       <div className="flex flex-col gap-1">
-                        <p className="text-[#FBA333] text-xl font-bold flex justify-end">
-                          {" "}
-                          &#11088;&#11088;&#11088;&#11088;&#11088;
-                        </p>
+                      <div className="flex justify-center">
+                          {[...Array(testimonial.stars)].map((star, index) => (
+                            <svg
+                              key={index}
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="#FBA333"
+                              className="h-6 w-6 mr-1"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 0l2.478 6.237H20l-5.832 4.718 2.197 6.726L10 14.127 3.635 17.681l2.197-6.726L0 6.237h7.522L10 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          ))}
+                        </div>
                         <p className="text-[#80819A] text-[18px] font-Nunito Sans">
                           {testimonial.reviews} reviews at Yelp
                         </p>
