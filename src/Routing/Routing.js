@@ -5,6 +5,7 @@ import OurFeatures from "../Components/OurFeatures/OurFeatures";
 import Certificate from "../Components/Certificate/Certificate";
 import Testimonial from "../Components/Testimonial/Testimonial";
 import Footer from "../Components/Footer/Footer";
+import ProfilEdit from "../Components/ProfileEdit/ProfilEdit";
 
 const Routing = () => {
   return (
@@ -15,6 +16,7 @@ const Routing = () => {
         <Route exact path={"/certificate"} element={<Certificate />}></Route>
         <Route exact path={"/testimonial"} element={<Testimonial />}></Route>
         <Route exact path={"/footer"} element={<Footer />}></Route>
+        <Route exact path={"/profile-edit"} element={<ProfilEdit />}></Route>
       </Routes>
     </BrowserRouter>
   );
