@@ -5,10 +5,10 @@ const Certificate = () => {
   return (
     <>
       <div className="flex flex-row justify-center gap-20 items-center bg-[#F0FFF7] px-28 py-16">
-        <div className="w-[800px] h-[550px]">
+        <div className="w-[820px] h-[560px]">
           <img src={Img1} className="w-full h-full object-fit" />
         </div>
-        <div className="flex flex-col gap-6 w-[50%]">
+        <div className="flex flex-col gap-8 w-[50%]">
           <p className="text-[44px] text-[#000000] font-poppins font-extrabold">
             {" "}
             <span className="text-[#1DBF73]"> Certification </span> By The
