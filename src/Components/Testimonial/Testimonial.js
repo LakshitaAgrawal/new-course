@@ -12,12 +12,14 @@ const Testimonial = () => {
       author: "Gloria Rose",
       stars: 5,
       reviews: 12,
+      image: Img1,
     },
     {
       text: "It's exactly what I've been looking for. You won't regret it. It really saves me time and effort. HopingMinds is exactly what our business has been lacking.",
       author: "Rose",
-      stars: 5,
+      stars: 3,
       reviews: 4,
+      image: Img2,
     },
     // Add more testimonials as needed
   ];
@@ -28,6 +30,10 @@ const Testimonial = () => {
     }, 10000);
     return () => clearInterval(timer);
   }, [testimonials.length]);
+
+  const handleArrow2Click = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
 
   return (
     <>
@@ -58,9 +64,9 @@ const Testimonial = () => {
           <div className="flex flex-row">
             <div className="w-[400px] h-[80px] border border-[#49BBBD] text-[#49BBBD] text-[22px] font-poppins flex justify-between items-center rounded-full">
               <div className="flex justify-center items-center pl-12">
-                <p>Write your assessment</p>
+                <p className="cursor-pointer">Write your assessment</p>
               </div>
-              <div className="w-[80px] h-[80px] border border-[#49BBBD] rounded-full flex justify-center">
+              <div className="w-[80px] h-[80px] border border-[#49BBBD] rounded-full flex justify-center cursor-pointer">
                 <img src={Arrow} className="self-center" />
               </div>
             </div>
@@ -70,7 +76,7 @@ const Testimonial = () => {
         {/* right */}
         <div className="relative ">
           <div className="relative w-[726px]">
-            <img src={Img1} className="w-[560px] h-[700px]" />
+            <img src={testimonials[currentIndex].image} className="w-[560px] h-[700px] object-contain" />
             <div className="absolute flex flex-row gap-10 justify-center rounded-xl shadow-2xl w-[660px] h-[300px] bg-[#ffffff] right-0 top-[72%]">
               {testimonials.map((testimonial, index) => (
                 <div
@@ -118,7 +124,7 @@ const Testimonial = () => {
           {/* arrrow */}
           <div
             className="w-[80px] h-[80px] absolute bg-[#ffffff] rounded-full right-28 top-[42%] flex justify-center items-center text-3xl text-[#1EA4CE] font-bold cursor-pointer"
-            style={{ filter: "drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" }}
+            style={{ filter: "drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" }} onClick={handleArrow2Click}
           >
             <img src={Arrow2} className="self-center" />
           </div>
