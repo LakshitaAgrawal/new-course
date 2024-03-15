@@ -7,6 +7,7 @@ import Testimonial from "../Components/Testimonial/Testimonial";
 import Footer from "../Components/Footer/Footer";
 import ProfilEdit from "../Components/ProfileEdit/ProfilEdit";
 import AboutUs from "../Components/AboutUs/AboutUs";
+import Search from "../Components/Search/Search";
 
 const Routing = () => {
   return (
@@ -19,6 +20,7 @@ const Routing = () => {
         <Route exact path={"/footer"} element={<Footer />}></Route>
         <Route exact path={"/profile-edit"} element={<ProfilEdit />}></Route>
         <Route exact path={"/about-us"} element={<AboutUs />}></Route>
+        <Route exact path={"/search"} element={<Search />}></Route>
       </Routes>
     </BrowserRouter>
   );
